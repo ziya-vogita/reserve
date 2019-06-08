@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="/static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link href="/static/css/training.css" th:href="@{/css/training.css}" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+<body>
+<div class="container py-4">
+    <form th:action="@{/book/register/confirm}" th:object="${bookForm}">
+        <h2 class="text-center text-success">読んだ本登録</h2>
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h4>本登録</h4>
+            </div>
+            <div class="card-body bg-light">
+
+                <div class="form-group">
+                    <label>本の名前</label>
+                    <input class="form-control" type="text" name="name" th:field="*{name}" placeholder="本の名前を入力してください">
+                </div>
+                <div class="form-group">
+                    <label>著者名</label>
+                    <input class="form-control" type="text" name="author" th:field="*{author}" placeholder="著者名を入力してください">
+                </div>
+                <div class="form-group">
+                    <label>ジャンル</label>
+                    <input class="form-control" type="text" name="Genre" th*field="*{Genre}" placeholder="本のジャンルを入力してください">
+                </div>
+
+                <p class="text-center"><input class="button button-info" type="submit" value="確認画面へ"></p>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
